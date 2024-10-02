@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Vahana AI Extension",
+    "version": "1.0",
+    "description": "A simple Chrome extension that displays 'Hello, World!'",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/logo16.png",
+        "48": "icons/logo48.png",
+        "128": "icons/logo128.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+    {
+      "matches": ["https://*/*"], 
+      "js": ["content.js"],
+      "world": "MAIN",
+      "css": ["content.css"]
+    }
+  ],
+    "permissions": [
+      "storage",
+      "activeTab",
+      "tabs"
+    ]
+  }
+  
